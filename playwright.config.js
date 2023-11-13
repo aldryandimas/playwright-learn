@@ -25,28 +25,32 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: "https://www.99.co",
-
+    baseURL: "https://dw.99.co",
+    httpCredentials: {
+      username: "nnnn",
+      password: "keepitreal99"
+    },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry"
   },
+  globalTimeout: 30000,
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] }
-    },
-
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] }
-    },
-
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] }
     }
+
+    // {
+    //   name: "firefox",
+    //   use: { ...devices["Desktop Firefox"] }
+    // },
+
+    // {
+    //   name: "webkit",
+    //   use: { ...devices["Desktop Safari"] }
+    // }
 
     /* Test against mobile viewports. */
     // {
