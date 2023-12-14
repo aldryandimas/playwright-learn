@@ -1,7 +1,5 @@
 const { test, expect } = require("@playwright/test");
 
-// element selectors
-
 test.describe("Login flow", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/singapore/");
